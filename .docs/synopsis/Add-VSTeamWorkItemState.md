@@ -1,0 +1,1 @@
+Adds a custom state for a WorkItem type in a custom process template

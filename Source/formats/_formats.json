@@ -99,6 +99,7 @@
       "vsteam_lib.WorkItem.ListView.ps1xml",
       "vsteam_lib.WorkItemDeleted.TableView.ps1xml",
       "vsteam_lib.WorkItemDeleted.ListView.ps1xml",
+      "vsteam_lib.WorkItemState.TableView.ps1xml",
       "vsteam_lib.JobRequest.TableView.ps1xml",
       "vsteam_lib.GitCommitRef.TableView.ps1xml",
       "vsteam_lib.GitUserDate.TableView.ps1xml",

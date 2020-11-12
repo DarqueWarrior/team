@@ -4,7 +4,7 @@
     {
       "typeId": "6b724908-ef14-45cf-84f8-768b5384da45",
       "name": "Scrum",
-      "referenceName": null,
+      "referenceName": "test",
       "description": "This template is for teams who follow the Scrum framework.",
       "parentProcessTypeId": "00000000-0000-0000-0000-000000000000",
       "isEnabled": true,
@@ -16,6 +16,20 @@
       "name": "Agile",
       "referenceName": null,
       "description": "This template is flexible and will work great for most teams using Agile planning methods, including those practicing Scrum.",
+      "projects": [
+        {
+          "id": "f5563894-c8da-49cf-bf5c-7caeaeed1af7",
+          "name": "Voting-App",
+          "description": "Vote App",
+          "url": "vstfs:///Classification/TeamProject/f5563894-c8da-49cf-bf5c-7caeaeed1af7"
+        },
+        {
+          "id": "15af52f7-47f1-40a7-817a-7661062cea76",
+          "name": "PeopleTracker",
+          "description": null,
+          "url": "vstfs:///Classification/TeamProject/15af52f7-47f1-40a7-817a-7661062cea76"
+        }
+      ],
       "parentProcessTypeId": "00000000-0000-0000-0000-000000000000",
       "isEnabled": true,
       "isDefault": true,

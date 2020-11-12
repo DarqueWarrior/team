@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+	<ViewDefinitions>
+		<View>
+			<Name>vsteam_lib.WorkItemState.TableView</Name>
+			<ViewSelectedBy>
+				<TypeName>vsteam_lib.WorkItemState</TypeName>
+			</ViewSelectedBy>
+			<TableControl>
+				<AutoSize />
+				<TableHeaders>
+					<TableColumnHeader>
+						<Label>WorkItemType</Label>
+					</TableColumnHeader>
+					<TableColumnHeader>
+						<Label>Order</Label>
+					</TableColumnHeader>
+					<TableColumnHeader>
+						<Label>Name</Label>
+					</TableColumnHeader>
+					<TableColumnHeader>
+						<Label>Category</Label>
+					</TableColumnHeader>
+					<TableColumnHeader>
+						<Label>Color</Label>
+					</TableColumnHeader>
+					<TableColumnHeader>
+						<Label>Customization</Label>
+					</TableColumnHeader>
+					<TableColumnHeader>
+						<Label>Hidden</Label>
+					</TableColumnHeader>
+				</TableHeaders>
+				<TableRowEntries>
+					<TableRowEntry>
+						<Wrap />
+						<TableColumnItems>
+							<TableColumnItem>
+								<PropertyName>WorkItemType</PropertyName>
+							</TableColumnItem>
+							<TableColumnItem>
+								<PropertyName>order</PropertyName>
+							</TableColumnItem>
+							<TableColumnItem>
+								<PropertyName>Name</PropertyName>
+							</TableColumnItem>
+							<TableColumnItem>
+								<PropertyName>stateCategory</PropertyName>
+							</TableColumnItem>
+							<TableColumnItem>
+								<PropertyName>color</PropertyName>
+							</TableColumnItem>
+							<TableColumnItem>
+								<PropertyName>customizationType</PropertyName>
+							</TableColumnItem>
+							<TableColumnItem>
+								<PropertyName>hidden</PropertyName>
+							</TableColumnItem>
+                  </TableColumnItems>
+					</TableRowEntry>
+				</TableRowEntries>
+			</TableControl>
+		</View>
+	</ViewDefinitions>
+</Configuration>

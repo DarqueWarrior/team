@@ -1,0 +1,1 @@
+Removes a custom state from a WorkItem type in a custom process

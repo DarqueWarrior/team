@@ -16,9 +16,8 @@ Describe 'VSTeamProject' {
       Mock _getApiVersion { return '1.0-unitTests' }
       Mock _callApi { Open-SampleFile 'Get-VSTeamProcess.json' } -ParameterFilter { $area -eq 'work' -and $resource -eq 'processes' }
 
-      # Get-VSTeamProject for cache 
-      Mock Invoke-RestMethod { return @() } -ParameterFilter {
-         $Uri -like "*`$top=100*" -and
+      # Get-VSTeamProject for cache
+      Mock Invoke-RestMethod { return [pscustomobject]@{value=@()} } -ParameterFilter {
          $Uri -like "*stateFilter=WellFormed*"
       }
    }
@@ -34,7 +33,7 @@ Describe 'VSTeamProject' {
          }
 
          # Track Progress
-         Mock Invoke-RestMethod {            
+         Mock Invoke-RestMethod {
             # This $i is in the module. Because we use InModuleScope
             # we can see it
             if ($i -gt 9) {
@@ -88,6 +87,7 @@ Describe 'VSTeamProject' {
                Typeid = '00000000-0000-0000-0000-000000000002'
             }
          }
+         [vsteam_lib.ProcessTemplateCache]::Invalidate()
       }
 
       It 'Should create project with CMMI' {

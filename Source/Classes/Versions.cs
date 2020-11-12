@@ -125,6 +125,8 @@ namespace vsteam_lib
       [ExcludeFromCodeCoverage]
       public static string DefaultTimeout { get; set; } = System.Environment.GetEnvironmentVariable("TEAM_TIMEOUT");
       [ExcludeFromCodeCoverage]
+      public static string DefaultProcess { get; set; } = System.Environment.GetEnvironmentVariable("TEAM_PROCESS");
+      [ExcludeFromCodeCoverage]
       public static string DefaultProject { get; set; } = System.Environment.GetEnvironmentVariable("TEAM_PROJECT");
       [ExcludeFromCodeCoverage]
       public static string Version { get; set; } = System.Environment.GetEnvironmentVariable("TEAM_VERSION") ?? "TFS2017";

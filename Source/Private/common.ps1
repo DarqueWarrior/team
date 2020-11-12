@@ -966,3 +966,25 @@ function _getDescriptorForACL {
 
    return $descriptor
 }
+
+$script:processTypeIds = @{}
+function _getProcessTemplateUrl {
+   Param (
+      [Parameter(Mandatory=$true,position=0)]
+      $ProcessTemplate
+   )
+   if ($script:processTypeIds[$ProcessTemplate]) {
+         return ((_getInstance) + "/_apis/work/processes/" + $script:processTypeIds[$ProcessTemplate] )
+   }
+   else {
+      $p = Get-VSTeamProcess $ProcessTemplate
+      if ($p -and $p.psobject.properties['typeID']) {
+         $script:processTypeIds[$ProcessTemplate] = $p.typeid
+         return ((_getInstance) + "/_apis/work/processes/" + $p.typeid )
+      }
+      elseif ($p -and $p.psobject.properties['Id']) {
+         $script:processTypeIds[$ProcessTemplate] = $p.Id
+         return ((_getInstance) + "/_apis/work/processes/" + $p.Id )
+      }
+   }
+}

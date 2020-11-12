@@ -1,5 +1,49 @@
 # Changelog
 
+## J.H. O'Neill @ 6th October 2020
+1. Ensured cache is cleared in Set- and Remove- -VSTeamWorkItemType.Tests
+2.  To Support workitem *states*, Added 5 new functions each with its PS1 help and test.
+   *  Get-VsteamWorkItemState
+   *  Add-VSTeamWorkItemState
+   *  Remove-VsteamWorkItemState
+   *  Hide-VsteamWorkItemState
+   *  Show-VsteamWorkItemState
+
+Each WorkItem type in each process template has a set of possible states e.g. "To Do", "In Progress" and "Done". Some are system states which cannot be removed but can be hidden (and shown). Other states are custom/user-added and can be removed (but not hidden). This provides tools for listing the states, hiding and showing system ones, and adding and removing user ones.
+
+## 7.2.0
+
+1. To support tab completion for (e.g.) icon color  in `Add-VSTeamWorkItemType`: **added class** `ColorCompleter` in file `Source\Classes\Completer\ColorCompleter.cs`. I can't find way to use the conventional `KnownColor` class in single new C# class which will build for both Windows PowerShell 5 and PowerShell Core, so I've worked round it by getting the static properties of `System.Drawing.Color`.
+1. To support use of Hex Red/green/blue attributes for colors (e.g icon color): **added class** `ColorTransformToHexAttribute` in file `Source\Classes\Attribute\ColorTransformToHexAttribute.cs`.
+    If the parameter is given an object of type `System.Drawing.Color`, it coverts it to "aabbcc" for hex r,g,b values. If the parameter is a string in form "#aabbcc", the transformer strips the hash, if it is a string which isn't in "aabbcc" form, it tries to convert to a color and from the color to its hex string e.g the user tab-completes to "Red" which becomes "ff0000" and if the user enters "randomtext" it converts to "000000"
+1. To support (e.g.) Population of an icon cache: **added function** `Get-VSTeamWorkIconList` in file `Source\Public\Get-VSTeamWorkItemIconList`
+1. To support icon completion and validation: **added class** `IconCache` in file `Source\Classes\Cache\IconCache.cs`. This largely copied from `ProjectCache`
+1. To support icon completion (e.g. in in `Add-VSTeamWorkItemType): **added class** `IconCompleter` in file `Source\Classes\Completer\IconCompleter.cs`. This is based on `ProjectCompleter`
+1. To support transformation of shortened icon-names from `name` to `icon_name` format and support the validation of icon names, (e.g. in in `Add-VSTeamWorkItemType): **added class** `IconTransformAttribute`in file `Source\Classes\Attribute\IconTransformAttribute.cs`.
+1. To support project-independent operations on Process-templates (e.g Add-VsTeamWorkItemType), **changed class** `vsteam_lib.Versions`,  **added property** `DefaultProcess` property and corresponding environment variable `TEAM_PROCESS` - `process` is patterned after `project`.
+1. **Changed function** `Set-VSTeamDefaultProject`
+     * *Fixed* an apparant bug in where process level environment variable `TEAM_PROJECT` and `[vsteam_lib.Versions]::DefaultProject` were only set on Windows.
+    * *Updated*  to store current project's process in `TEAM_PROCESS` and `[vsteam_lib.Versions]::DefaultProcess`
+    * *Updated tests* `Set-VSTeamDefaultProject.Tests.ps1` and `Get-VSTeamAgent.Tests.ps1` to mock the additional API call used to look-up the project's template.
+1. To support changes to Process Templates themselves **changed class** `vsteam_lib.Process` **added property** `ReferenceName`, and to make it easier to find the template for a project **added property** projects.
+1. **Changed function** `Get-VSTeamProcess`, **add switch** `expandprojects`. If specified populates the newly add projects property in (9)
+1. **Changed function** `Get-VSTeamWorkItemType`.
+    * Fixed a BUG: Only WorkItemTypes for the current project are cached and for validation, so requesting a WorkItem from a different project will fail if that type is not in the current project. As a by product now support wildcards for selecting WorkItem types, entering an invalid name runs the command without any output instead of causing an error.
+    * Added support for getting the WorkItem types from a Process-template as well as from a project. When getting from a process-template, or from the default project whose template is known, add a property named `ProcessTemplate` to the objects so that piping into another function with that name as a `ValueFromPipelineByPropertyName` parameter can use it.
+    * Added an alias property named `WorkItemType` as an alias for `Name`, also for `ValueFromPipelineByPropertyName` support
+    * Added a property named "hidden" when getting a list of WorkItem types for a project, so picklists can remove hidden types.
+    * Added a switch parameter -NotHidden to return only visible WorkItem Types
+    * Added an expand parameter to get state, behavior and/or layout information
+    * Now allow the workitemtype parameter to be a wildcard or multiple strings. (e.g. Get-VSTeamWorkItemType bug,feature)
+    * Fixed test which was breaking WorkItem type sample data by converting it to JSON when it is known to fail to convert, it now just reads the text file and leaves the section at the comment `# This call returns JSON with "": which causes the ConvertFrom-Json to fail`  to do its thing!
+    * Added functional test for -Process Template option.
+    * Added examples and parameter description to help.
+1. For WorkItemType operations, **added function** a private/helper `_getProcessTemplateUrl` in file `common.ps1` to get/set the urls of templates in a script level hash table (to reduce API calls to get ID from a name.) In a previous version I set a URL property on the processs object - this has been dropped.
+1. **Added functions**  `Add-VSTeamWorkItemType`, `Set-VSTeamWorkItemType`, `Remove-VSTeamWorkItemType`, `Unlock-VSTeamWorkItemType` with associated help and tests.
+1. Ensured tests which mock Get-VSTeamProcess clear the process cache (otherwise the processes they return will not be used to validate the Process parameter during the test,)
+1. Ensured tests which call Set-VSTeamProject load and mock Get-VSTeamProcess.
+1. Modified validator for process templates to allow multiple template names to be validated (where function can't support multiple names count should be validated.)
+
 ## 7.1.2
 
 Merged [Pull Request](https://github.com/DarqueWarrior/vsteam/pull/366) from [Jhoneill](https://github.com/jhoneill) which included the following:

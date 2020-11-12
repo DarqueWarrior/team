@@ -1,0 +1,1 @@
+Lists possible states for a WorkItem type.
