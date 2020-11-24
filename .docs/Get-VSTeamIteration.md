@@ -22,6 +22,21 @@ Depth of children to fetch.
 Type: int32
 ```
 
+### -Expand
+If specified expands the `Children` node so the functions returns all decendants to the limit specified in depth.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: WorkingDays
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### Path
 
 Path of the classification node.

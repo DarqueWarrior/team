@@ -1,0 +1,1 @@
+Removes a custom process template. Attepting to remove an system one , like 'Scrum' or 'Agile', has no effect.

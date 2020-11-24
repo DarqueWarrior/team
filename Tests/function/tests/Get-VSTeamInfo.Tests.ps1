@@ -8,6 +8,7 @@ Describe 'VSTeamInfo' {
    Context 'Get-VSTeamInfo' {
       AfterAll {
          $Global:PSDefaultParameterValues.Remove("*-vsteam*:projectName")
+         [vsteam_lib.Versions]::Account = ''
       }
 
       It 'should return account and default project' {

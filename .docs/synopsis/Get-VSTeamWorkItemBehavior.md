@@ -1,0 +1,1 @@
+Gets the Behavior (a.k.a "Backlog levels" or "Boards") for associated with a workitem type, if any.

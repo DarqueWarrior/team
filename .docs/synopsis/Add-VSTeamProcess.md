@@ -1,0 +1,1 @@
+Adds a process, descended from an existing one, like 'Scrum' or 'Agile', to an organization.

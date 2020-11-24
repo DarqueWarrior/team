@@ -1,0 +1,1 @@
+Returns the settings for Bug behavior, visible boards, and iterations for a project team.

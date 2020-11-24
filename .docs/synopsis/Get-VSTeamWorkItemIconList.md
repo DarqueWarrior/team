@@ -1,0 +1,1 @@
+Returns a list of Icons which can be displayed for different WorkItem types in the web UI.

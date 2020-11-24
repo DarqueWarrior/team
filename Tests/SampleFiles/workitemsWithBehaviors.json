@@ -1,0 +1,136 @@
+[
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.Task",
+    "name": "Task",
+    "description": "Tracks work that needs to be done.",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.Task",
+    "customization": "system",
+    "color": "F2CB1D",
+    "icon": "icon_clipboard",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [
+      "@{behavior=; isDefault=True; isLegacyDefault=True; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.TaskBacklogBehavior}"
+    ],
+    "WorkItemType": "Task",
+    "ProcessTemplate": "Scrum"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.Bug",
+    "name": "Bug",
+    "description": "Describes a divergence between required and actual behavior, and tracks the work done to correct the defect and verify the correction.",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.Bug",
+    "customization": "system",
+    "color": "CC293D",
+    "icon": "icon_insect",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [],
+    "WorkItemType": "Bug",
+    "ProcessTemplate": "Scrum"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.Epic",
+    "name": "Epic",
+    "description": "Epics help teams effectively manage and groom their product backlog",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.Epic",
+    "customization": "system",
+    "color": "FF7B00",
+    "icon": "icon_crown",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [
+      "@{behavior=; isDefault=True; isLegacyDefault=True; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/Microsoft.VSTS.Scrum.EpicBacklogBehavior}"
+    ],
+    "WorkItemType": "Epic",
+    "ProcessTemplate": "Scrum"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.Feature",
+    "name": "Feature",
+    "description": "Tracks a feature that will be released with the product",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.Feature",
+    "customization": "system",
+    "color": "773B93",
+    "icon": "icon_trophy",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [
+      "@{behavior=; isDefault=True; isLegacyDefault=True; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/Microsoft.VSTS.Scrum.FeatureBacklogBehavior}"
+    ],
+    "WorkItemType": "Feature",
+    "ProcessTemplate": "Scrum"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.Impediment",
+    "name": "Impediment",
+    "description": "Tracks an obstacle to progress.",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.Impediment",
+    "customization": "system",
+    "color": "B4009E",
+    "icon": "icon_traffic_cone",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [],
+    "WorkItemType": "Impediment",
+    "ProcessTemplate": "Scrum"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.ProductBacklogItem",
+    "name": "Product Backlog Item",
+    "description": "Tracks an activity the user will be able to perform with the product.",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.ProductBacklogItem",
+    "customization": "system",
+    "color": "009CCC",
+    "icon": "icon_list",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [
+      "@{behavior=; isDefault=True; isLegacyDefault=True; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.RequirementBacklogBehavior}"
+    ],
+    "WorkItemType": "Product Backlog Item",
+    "ProcessTemplate": "Scrum"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.TestCase",
+    "name": "Test Case",
+    "description": "Server-side data for a set of steps to be tested.",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.TestCase",
+    "customization": "system",
+    "color": "004B50",
+    "icon": "icon_test_case",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [],
+    "WorkItemType": "Test Case",
+    "ProcessTemplate": "Scrum"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.TestPlan",
+    "name": "Test Plan",
+    "description": "Tracks test activities for a specific milestone or release.",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.TestPlan",
+    "customization": "system",
+    "color": "004B50",
+    "icon": "icon_test_plan",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [],
+    "WorkItemType": "Test Plan",
+    "ProcessTemplate": "Scrum"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.TestSuite",
+    "name": "Test Suite",
+    "description": "Tracks test activites for a specific feature, requirement, or user story.",
+    "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/workItemTypes/Microsoft.VSTS.WorkItemTypes.TestSuite",
+    "customization": "system",
+    "color": "004B50",
+    "icon": "icon_test_suite",
+    "isDisabled": false,
+    "inherits": null,
+    "behaviors": [],
+    "WorkItemType": "Test Suite",
+    "ProcessTemplate": "Scrum"
+  }
+]

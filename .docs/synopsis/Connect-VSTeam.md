@@ -1,0 +1,1 @@
+Connects and sets the default project, working with saved account, personal access token and project name. 

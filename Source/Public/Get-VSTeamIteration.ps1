@@ -13,9 +13,13 @@ function Get-VSTeamIteration {
       [Parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true)]
       [vsteam_lib.ProjectValidateAttribute($false)]
       [ArgumentCompleter([vsteam_lib.ProjectCompleter])]
-      [string] $ProjectName
-   )
+      [string] $ProjectName,
 
+      [switch] $Expand
+   )
+   begin {
+      function _expand {param($i) Write-Output $i ; foreach ($c in $i.children) {_expand $c}}
+   }
    process {
       if ($PSCmdlet.ParameterSetName -eq "ByPath") {
          $resp = Get-VSTeamClassificationNode -ProjectName $ProjectName `
@@ -28,6 +32,7 @@ function Get-VSTeamIteration {
             -Depth $Depth `
             -Id $Id
       }
-      Write-Output $resp
+      if ($Expand) {_expand      $resp}
+      else         {Write-Output $resp}
    }
 }

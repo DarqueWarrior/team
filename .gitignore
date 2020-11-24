@@ -21,6 +21,8 @@ Source/Public/vsteam.public.ps1
 Source/Private/vsteam.private.ps1
 Source/Classes/vsteam.classes.ps1
 /dist
+/Notes
+/ExtraScripts
 test-results.xml
 coverage.xml
 .editorconfig

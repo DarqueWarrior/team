@@ -1,0 +1,1 @@
+Modifies an existing process template, like 'Scrum' or 'Agile', or one which has been custom defined.

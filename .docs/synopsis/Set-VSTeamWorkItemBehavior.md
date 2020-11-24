@@ -1,0 +1,1 @@
+Modifies the behavior (associated Backlog) of a WorkItem Type in a custom process template.

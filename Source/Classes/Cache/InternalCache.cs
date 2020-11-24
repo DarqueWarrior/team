@@ -46,9 +46,8 @@ namespace vsteam_lib
       internal void Update(IEnumerable<string> list, int minutesToExpire = 1)
       {
          this.MinutesToExpire = minutesToExpire;
-
-         // If a list is passed in use it. If not call Get-VSTeamProcess
-         if (null == list)
+         // If a list is passed in use it. If not, call the command we were given, provided we're logged on
+         if (null == list && !string.IsNullOrEmpty(Versions.Account))
          {
             if (this._requiresProject)
             {
@@ -77,7 +76,6 @@ namespace vsteam_lib
                                 .Invoke<string>();
             }
          }
-
          this.PreFill(list);
       }
 
@@ -91,9 +89,9 @@ namespace vsteam_lib
             {
                this.Values.Add(item);
             }
+            /// Only set the time stamp if a list was passed.
+            this._timeStamp = Math.Round(DateTime.UtcNow.TimeOfDay.TotalMinutes);
          }
-
-         this._timeStamp = Math.Round(DateTime.UtcNow.TimeOfDay.TotalMinutes);
       }
 
       internal IEnumerable<string> GetCurrent()

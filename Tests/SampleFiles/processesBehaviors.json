@@ -1,0 +1,71 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "name": "Ordered",
+      "referenceName": "System.OrderedBehavior",
+      "color": null,
+      "rank": 0,
+      "description": "Enables work items to be ordered relative to other work items",
+      "customization": "inherited",
+      "fields": "",
+      "inherits": null,
+      "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.OrderedBehavior"
+    },
+    {
+      "name": "Backlog items",
+      "referenceName": "System.RequirementBacklogBehavior",
+      "color": "009CCC",
+      "rank": 20,
+      "description": "Requirement level backlog and board",
+      "customization": "inherited",
+      "fields": " ",
+      "inherits": "@{behaviorRefName=System.OrderedBehavior; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.OrderedBehavior}",
+      "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.RequirementBacklogBehavior"
+    },
+    {
+      "name": "Epics",
+      "referenceName": "Microsoft.VSTS.Scrum.EpicBacklogBehavior",
+      "color": "FF7B00",
+      "rank": 40,
+      "description": "Epic level backlog and board",
+      "customization": "system",
+      "fields": "",
+      "inherits": "@{behaviorRefName=System.PortfolioBacklogBehavior; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.PortfolioBacklogBehavior}",
+      "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/Microsoft.VSTS.Scrum.EpicBacklogBehavior"
+    },
+    {
+      "name": "Features",
+      "referenceName": "Microsoft.VSTS.Scrum.FeatureBacklogBehavior",
+      "color": "773B93",
+      "rank": 30,
+      "description": "Feature level backlog and board",
+      "customization": "system",
+      "fields": "",
+      "inherits": "@{behaviorRefName=System.PortfolioBacklogBehavior; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.PortfolioBacklogBehavior}",
+      "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/Microsoft.VSTS.Scrum.FeatureBacklogBehavior"
+    },
+    {
+      "name": "Tasks",
+      "referenceName": "System.TaskBacklogBehavior",
+      "color": "F2CB1D",
+      "rank": 10,
+      "description": "Task level backlog and board",
+      "customization": "system",
+      "fields": "  ",
+      "inherits": "@{behaviorRefName=System.OrderedBehavior; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.OrderedBehavior}",
+      "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.TaskBacklogBehavior"
+    },
+    {
+      "name": "Portfolio",
+      "referenceName": "System.PortfolioBacklogBehavior",
+      "color": null,
+      "rank": 0,
+      "description": "Portfolio level backlog and board",
+      "customization": "system",
+      "fields": "",
+      "inherits": "@{behaviorRefName=System.OrderedBehavior; url=https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.OrderedBehavior}",
+      "url": "https://dev.azure.com/aticpac/_apis/work/processes/6b724908-ef14-45cf-84f8-768b5384da45/behaviors/System.PortfolioBacklogBehavior"
+    }
+  ]
+}
