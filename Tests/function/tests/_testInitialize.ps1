@@ -11,7 +11,7 @@ Import-Module SHiPS
 
 $baseFolder = "$PSScriptRoot/../../.."
 $sampleFiles = "$PSScriptRoot/../../SampleFiles"
-      
+
 Add-Type -Path "$baseFolder/dist/bin/vsteam-lib.dll"
 
 $sut = (Split-Path -Leaf $testPath).Replace(".Tests.", ".")
@@ -22,7 +22,7 @@ $sut = (Split-Path -Leaf $testPath).Replace(".Tests.", ".")
 if ($private.IsPresent) {
    . "$baseFolder/Source/Private/$sut"
 }
-else {   
+else {
    . "$baseFolder/Source/Public/$sut"
 }
 
@@ -31,7 +31,7 @@ if ($doNotPrimeCache.IsPresent) {
 }
 
 # Prime the project cache with an empty list. This will make sure
-# any project name used will pass validation and Get-VSTeamProject 
+# any project name used will pass validation and Get-VSTeamProject
 # will not need to be called.
 [vsteam_lib.ProjectCache]::Update([string[]]@(), 120)
 
@@ -41,13 +41,13 @@ function Open-SampleFile {
       [string] $file,
       [switch] $ReturnValue,
       # The index of the value array to return
-      [int] $index = -1, 
+      [int] $index = -1,
       [switch] $Json
    )
    if ($Json.IsPresent) {
-      return $(Get-Content "$sampleFiles\$file" -Raw | ConvertTo-Json)
+      return $(Get-Content "$sampleFiles\$file" -Raw ) #had convertTo-json but this files are json text, caused warning with PS 7.1
    }
-   
+
    if ($ReturnValue.IsPresent) {
       return $(Get-Content "$sampleFiles\$file" -Raw | ConvertFrom-Json).value
    }

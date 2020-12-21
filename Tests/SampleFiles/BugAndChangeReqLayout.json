@@ -1,0 +1,878 @@
+[
+  {
+    "referenceName": "Scrum5.ChangeReq",
+    "name": "ChangeReq",
+    "description": "Change Request",
+    "url": "https://dev.azure.com/test/_apis/work/processes/12345678-0000-0000-0000-000000000000/workItemTypes/Scrum5.ChangeReq",
+    "customization": "custom",
+    "color": "000000",
+    "icon": "icon_asterisk",
+    "isDisabled": false,
+    "inherits": null,
+    "layout": {
+      "pages": [
+        {
+          "id": "0f5e381a-b973-4fe9-9c29-05ef25937df5",
+          "label": "Customer",
+          "pageType": "custom",
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "ecd9fbf3-b4cd-4b0d-a290-9c2feb6f7ce4",
+                  "label": "Customer Information",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Custom.Region",
+                      "label": "Region",
+                      "controlType": "FieldControl",
+                      "visible": true,
+                      "isContribution": false
+                    },
+                    {
+                      "id": "Custom.Office",
+                      "label": "Office",
+                      "controlType": "FieldControl",
+                      "visible": true,
+                      "isContribution": false
+                    },
+                    {
+                      "id": "Custom.AccountMgr",
+                      "label": "AccountMgr",
+                      "controlType": "FieldControl",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": [
+                  {
+                  "id": "ecd9fbf3-b4cd-4b0d-a290-9c2feb6f7ce4",
+                  "label": "Details",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": []
+                  }
+               ]
+            },
+            {
+              "id": "Section3",
+              "groups": []
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        },
+        {
+          "id": "d0171d51-ff84-4038-afc1-8800ab613160.System.WorkItemType.Details",
+          "inherited": true,
+          "label": "Details",
+          "pageType": "custom",
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "d0171d51-ff84-4038-afc1-8800ab613160.System.WorkItemType.Details.Description.WideGroup",
+                  "inherited": true,
+                  "label": "Description",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "System.Description",
+                      "inherited": true,
+                      "controlType": "HtmlFieldControl",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": []
+            },
+            {
+              "id": "Section3",
+              "groups": [
+                {
+                  "id": "Agile.Bug.Bug.Deployment",
+                  "inherited": true,
+                  "label": "Deployment",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Deployments",
+                      "inherited": true,
+                      "label": "",
+                      "controlType": "DeploymentsControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                },
+                {
+                  "id": "Agile.Bug.Bug.Development",
+                  "inherited": true,
+                  "label": "Development",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Development",
+                      "inherited": true,
+                      "label": "",
+                      "controlType": "LinksControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "<LinksControlOptions ViewMode=\"List\" ZeroDataExperience=\"Development\" ShowCallToAction=\"true\"><ListViewOptions GroupLinks=\"false\"></ListViewOptions><LinkFilters><ExternalLinkFilter Type=\"Build\" /><ExternalLinkFilter Type=\"Integrated in build\" /><ExternalLinkFilter Type=\"Pull Request\" /><ExternalLinkFilter Type=\"Branch\" /><ExternalLinkFilter Type=\"Fixed in Commit\" /><ExternalLinkFilter Type=\"Fixed in Changeset\" /><ExternalLinkFilter Type=\"Source Code File\" /><ExternalLinkFilter Type=\"Found in build\" /><ExternalLinkFilter Type=\"GitHub Pull Request\" /><ExternalLinkFilter Type=\"GitHub Commit\" /></LinkFilters></LinksControlOptions>",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                },
+                {
+                  "id": "Agile.Bug.Bug.Related Work",
+                  "inherited": true,
+                  "label": "Related Work",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Related Work",
+                      "inherited": true,
+                      "label": "",
+                      "controlType": "LinksControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "<LinksControlOptions ViewMode=\"List\"><LinkFilters><WorkItemLinkFilter Type=\"System.LinkTypes.Duplicate-Reverse\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Hierarchy-Reverse\" /><WorkItemLinkFilter Type=\"Microsoft.VSTS.Common.TestedBy-Forward\" /><WorkItemLinkFilter Type=\"Microsoft.VSTS.Common.TestedBy-Reverse\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Hierarchy-Forward\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Duplicate-Forward\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Dependency\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Related\" /><ExternalLinkFilter Type=\"GitHub Issue\" /></LinkFilters><Columns><Column Name=\"System.State\" /><Column Name=\"System.ChangedDate\" /><Column Name=\"System.Links.Comment\" /></Columns></LinksControlOptions>",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        },
+        {
+          "id": "d0171d51-ff84-4038-afc1-8800ab613160.System.WorkItemType.System_History",
+          "inherited": true,
+          "label": "History",
+          "pageType": "history",
+          "locked": true,
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "d0171d51-ff84-4038-afc1-8800ab613160.System.WorkItemType.System_History.History",
+                  "inherited": true,
+                  "label": "History",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "System.History",
+                      "inherited": true,
+                      "controlType": "WorkItemLogControl",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": []
+            },
+            {
+              "id": "Section3",
+              "groups": []
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        },
+        {
+          "id": "d0171d51-ff84-4038-afc1-8800ab613160.System.WorkItemType.System_Links",
+          "inherited": true,
+          "label": "Links",
+          "pageType": "links",
+          "locked": true,
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "d0171d51-ff84-4038-afc1-8800ab613160.System.WorkItemType.System_Links.Links",
+                  "inherited": true,
+                  "label": "Links",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "inherited": true,
+                      "controlType": "LinksControl",
+                      "metadata": "<LinksControlOptions ZeroDataExperience=\"CallToAction\"><Columns><Column Name=\"System.State\" /><Column Name=\"System.ChangedDate\" /><Column Name=\"System.Links.Comment\" /></Columns></LinksControlOptions>",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": []
+            },
+            {
+              "id": "Section3",
+              "groups": []
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        },
+        {
+          "id": "d0171d51-ff84-4038-afc1-8800ab613160.System.WorkItemType.System_Attachments",
+          "inherited": true,
+          "label": "Attachments",
+          "pageType": "attachments",
+          "locked": true,
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "d0171d51-ff84-4038-afc1-8800ab613160.System.WorkItemType.System_Attachments.Attachments",
+                  "inherited": true,
+                  "label": "Attachments",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "inherited": true,
+                      "label": "Attachments",
+                      "controlType": "AttachmentsControl",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": []
+            },
+            {
+              "id": "Section3",
+              "groups": []
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        }
+      ],
+      "systemControls": [
+        {
+          "id": "System.Title",
+          "label": "",
+          "controlType": "FieldControl",
+          "readOnly": false,
+          "watermark": "Enter title",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.AssignedTo",
+          "label": "Assi&gned To",
+          "controlType": "FieldControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.State",
+          "label": "Stat&e",
+          "controlType": "FieldControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.Reason",
+          "label": "Reason",
+          "controlType": "FieldControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.AreaPath",
+          "label": "&Area",
+          "controlType": "WorkItemClassificationControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.IterationPath",
+          "label": "Ite&ration",
+          "controlType": "WorkItemClassificationControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.History",
+          "label": "History",
+          "controlType": "WorkItemLogControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "Links",
+          "label": "Links",
+          "controlType": "LinksControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "Attachments",
+          "label": "Attachments",
+          "controlType": "AttachmentsControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        }
+      ]
+    },
+    "ProcessTemplate": "Scrum5",
+    "WorkItemType": "ChangeReq"
+  },
+  {
+    "referenceName": "Microsoft.VSTS.WorkItemTypes.Bug",
+    "name": "Bug",
+    "description": "Describes a divergence between required and actual behavior, and tracks the work done to correct the defect and verify the correction.",
+    "url": "https://dev.azure.com/test/_apis/work/processes/12345678-0000-0000-0000-000000000000/workItemTypes/Microsoft.VSTS.WorkItemTypes.Bug",
+    "customization": "system",
+    "color": "CC293D",
+    "icon": "icon_insect",
+    "isDisabled": false,
+    "inherits": null,
+    "layout": {
+      "pages": [
+        {
+          "id": "Scrum.Bug.Bug",
+          "inherited": true,
+          "label": "Details",
+          "pageType": "custom",
+          "locked": false,
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "Scrum.Bug.Bug.Repro Steps.WideGroup",
+                  "inherited": true,
+                  "label": "Repro Steps",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Microsoft.VSTS.TCM.ReproSteps",
+                      "inherited": true,
+                      "label": "Repro Steps",
+                      "controlType": "HtmlFieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                },
+                {
+                  "id": "Scrum.Bug.Bug.System Info.WideGroup",
+                  "inherited": true,
+                  "label": "System Info",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Microsoft.VSTS.TCM.SystemInfo",
+                      "inherited": true,
+                      "label": "System Info",
+                      "controlType": "HtmlFieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                },
+                {
+                  "id": "Scrum.Bug.Bug.Acceptance Criteria.WideGroup",
+                  "inherited": true,
+                  "label": "Acceptance Criteria",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Microsoft.VSTS.Common.AcceptanceCriteria",
+                      "inherited": true,
+                      "label": "Acceptance Criteria",
+                      "controlType": "HtmlFieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": [
+                {
+                  "id": "Scrum.Bug.Bug.Details",
+                  "inherited": true,
+                  "label": "Details",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Microsoft.VSTS.Common.Priority",
+                      "inherited": true,
+                      "label": "Priority",
+                      "controlType": "FieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    },
+                    {
+                      "id": "Microsoft.VSTS.Common.Severity",
+                      "inherited": true,
+                      "label": "Severity",
+                      "controlType": "FieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    },
+                    {
+                      "id": "Microsoft.VSTS.Scheduling.Effort",
+                      "inherited": true,
+                      "label": "Effort",
+                      "controlType": "FieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    },
+                    {
+                      "id": "Microsoft.VSTS.Scheduling.RemainingWork",
+                      "inherited": true,
+                      "label": "Remaining Work",
+                      "controlType": "FieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    },
+                    {
+                      "id": "Microsoft.VSTS.Common.Activity",
+                      "inherited": true,
+                      "label": "Activity",
+                      "controlType": "FieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                },
+                {
+                  "id": "Scrum.Bug.Bug.Build",
+                  "inherited": true,
+                  "label": "Build",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Microsoft.VSTS.Build.FoundIn",
+                      "inherited": true,
+                      "label": "Found in Build",
+                      "controlType": "FieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    },
+                    {
+                      "id": "Microsoft.VSTS.Build.IntegrationBuild",
+                      "inherited": true,
+                      "label": "Integrated in Build",
+                      "controlType": "FieldControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section3",
+              "groups": [
+                {
+                  "id": "Scrum.Bug.Bug.Deployment",
+                  "inherited": true,
+                  "label": "Deployment",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Deployments",
+                      "inherited": true,
+                      "label": "",
+                      "controlType": "DeploymentsControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                },
+                {
+                  "id": "Scrum.Bug.Bug.Development",
+                  "inherited": true,
+                  "label": "Development",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Development",
+                      "inherited": true,
+                      "label": "",
+                      "controlType": "LinksControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "<LinksControlOptions ViewMode=\"List\" ZeroDataExperience=\"Development\" ShowCallToAction=\"true\"><ListViewOptions GroupLinks=\"false\"></ListViewOptions><LinkFilters><ExternalLinkFilter Type=\"Build\" /><ExternalLinkFilter Type=\"Integrated in build\" /><ExternalLinkFilter Type=\"Pull Request\" /><ExternalLinkFilter Type=\"Branch\" /><ExternalLinkFilter Type=\"Fixed in Commit\" /><ExternalLinkFilter Type=\"Fixed in Changeset\" /><ExternalLinkFilter Type=\"Source Code File\" /><ExternalLinkFilter Type=\"Found in build\" /><ExternalLinkFilter Type=\"GitHub Pull Request\" /><ExternalLinkFilter Type=\"GitHub Commit\" /></LinkFilters></LinksControlOptions>",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                },
+                {
+                  "id": "Scrum.Bug.Bug.Related Work",
+                  "inherited": true,
+                  "label": "Related Work",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "Related Work",
+                      "inherited": true,
+                      "label": "",
+                      "controlType": "LinksControl",
+                      "readOnly": false,
+                      "watermark": "",
+                      "metadata": "<LinksControlOptions ViewMode=\"List\"><LinkFilters><WorkItemLinkFilter Type=\"System.LinkTypes.Duplicate-Reverse\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Hierarchy-Reverse\" /><WorkItemLinkFilter Type=\"Microsoft.VSTS.Common.TestedBy-Reverse\" /><WorkItemLinkFilter Type=\"Microsoft.VSTS.Common.TestedBy-Forward\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Hierarchy-Forward\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Duplicate-Forward\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Dependency\" /><WorkItemLinkFilter Type=\"System.LinkTypes.Related\" /><ExternalLinkFilter Type=\"GitHub Issue\" /></LinkFilters><Columns><Column Name=\"System.State\" /><Column Name=\"System.ChangedDate\" /><Column Name=\"System.Links.Comment\" /></Columns></LinksControlOptions>",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        },
+        {
+          "id": "Scrum.Bug.System_History",
+          "inherited": true,
+          "label": "History",
+          "pageType": "history",
+          "locked": true,
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "Scrum.Bug.System_History.History",
+                  "inherited": true,
+                  "label": "History",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "id": "System.History",
+                      "inherited": true,
+                      "controlType": "WorkItemLogControl",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": []
+            },
+            {
+              "id": "Section3",
+              "groups": []
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        },
+        {
+          "id": "Scrum.Bug.System_Links",
+          "inherited": true,
+          "label": "Links",
+          "pageType": "links",
+          "locked": true,
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "Scrum.Bug.System_Links.Links",
+                  "inherited": true,
+                  "label": "Links",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "inherited": true,
+                      "controlType": "LinksControl",
+                      "metadata": "<LinksControlOptions ZeroDataExperience=\"CallToAction\"><Columns><Column Name=\"System.State\" /><Column Name=\"System.ChangedDate\" /><Column Name=\"System.Links.Comment\" /></Columns></LinksControlOptions>",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": []
+            },
+            {
+              "id": "Section3",
+              "groups": []
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        },
+        {
+          "id": "Scrum.Bug.System_Attachments",
+          "inherited": true,
+          "label": "Attachments",
+          "pageType": "attachments",
+          "locked": true,
+          "visible": true,
+          "isContribution": false,
+          "sections": [
+            {
+              "id": "Section1",
+              "groups": [
+                {
+                  "id": "Scrum.Bug.System_Attachments.Attachments",
+                  "inherited": true,
+                  "label": "Attachments",
+                  "isContribution": false,
+                  "visible": true,
+                  "controls": [
+                    {
+                      "inherited": true,
+                      "label": "Attachments",
+                      "controlType": "AttachmentsControl",
+                      "visible": true,
+                      "isContribution": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Section2",
+              "groups": []
+            },
+            {
+              "id": "Section3",
+              "groups": []
+            },
+            {
+              "id": "Section4",
+              "groups": []
+            }
+          ]
+        }
+      ],
+      "systemControls": [
+        {
+          "id": "System.Title",
+          "label": "",
+          "controlType": "FieldControl",
+          "readOnly": false,
+          "watermark": "Enter title",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.AssignedTo",
+          "label": "Assi&gned To",
+          "controlType": "FieldControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.State",
+          "label": "Stat&e",
+          "controlType": "FieldControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.Reason",
+          "label": "Reason",
+          "controlType": "FieldControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.AreaPath",
+          "label": "&Area",
+          "controlType": "WorkItemClassificationControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.IterationPath",
+          "label": "Ite&ration",
+          "controlType": "WorkItemClassificationControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "System.History",
+          "label": "History",
+          "controlType": "WorkItemLogControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "Links",
+          "label": "Links",
+          "controlType": "LinksControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        },
+        {
+          "id": "Attachments",
+          "label": "Attachments",
+          "controlType": "AttachmentsControl",
+          "readOnly": false,
+          "watermark": "",
+          "visible": true,
+          "isContribution": false
+        }
+      ]
+    },
+    "ProcessTemplate": "Scrum5",
+    "WorkItemType": "Bug"
+  }
+]

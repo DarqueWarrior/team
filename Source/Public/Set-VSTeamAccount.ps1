@@ -149,6 +149,15 @@ function Set-VSTeamAccount {
 
          Set-VSTeamAPIVersion -Target (_getVSTeamAPIVersion -Instance $account -Version $Version)
 
+         #Reset all caches when Signing in.
+         [vsteam_lib.FieldCache]::Invalidate()
+         [vsteam_lib.IconCache]::Invalidate()
+         [vsteam_lib.PickListCache]::Invalidate()
+         [vsteam_lib.ProcessTemplateCache]::Invalidate()
+         [vsteam_lib.ProjectCache]::Invalidate()
+         [vsteam_lib.QueryCache]::Invalidate()
+         [vsteam_lib.WorkItemTypeCache]::Invalidate()
+
          if ($Drive) {
             # Assign to null so nothing is writen to output.
             Write-Output "# To map a drive run the following command or pipe to iex:`nNew-PSDrive -Name $Drive -PSProvider SHiPS -Root 'VSTeam#vsteam_lib.Provider.Account' -Description $account"
