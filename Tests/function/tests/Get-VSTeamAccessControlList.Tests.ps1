@@ -4,6 +4,7 @@ Describe 'VSTeamAccessControlList' {
    BeforeAll {
       . "$PSScriptRoot\_testInitialize.ps1" $PSCommandPath
       . "$baseFolder/Source/Public/Set-VSTeamDefaultProject.ps1"
+      . "$baseFolder/Source/Public/Get-VSTeamProcess.ps1"
 
       ## Arrange
       # You have to set the version or the api-version will not be added when versions = ''
@@ -14,6 +15,13 @@ Describe 'VSTeamAccessControlList' {
       # Set the account to use for testing. A normal user would do this
       # using the Set-VSTeamAccount function.
       Mock _getInstance { return 'https://dev.azure.com/test' }
+      Mock Get-VSTeamProcess { return [PSCustomObject]@{
+            name   = 'CMMI'
+            id     = 1
+            Typeid = '00000000-0000-0000-0000-000000000002'
+         }
+      }
+
    }
 
    Context 'Get-VSTeamAccessControlList' {

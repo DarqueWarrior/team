@@ -2,13 +2,22 @@ Set-StrictMode -Version Latest
 
 Describe 'VSTeamAgent' {
    BeforeAll {
-      . "$PSScriptRoot\_testInitialize.ps1" $PSCommandPath      
+      . "$PSScriptRoot\_testInitialize.ps1" $PSCommandPath
       . "$baseFolder/Source/Public/Set-VSTeamDefaultProject.ps1"
-      
+      . "$baseFolder/Source/Public/Get-VSTeamProcess.ps1"
+
+
       ## Arrange
       Mock _getApiVersion { return '1.0-unitTests' } -ParameterFilter { $Service -eq 'DistributedTaskReleased' }
-
+      Mock Invoke-RestMethod { return @() } -ParameterFilter {$Uri -like "*_apis/work/processes*" }
       Mock _getInstance { return 'https://dev.azure.com/test' }
+      Mock Get-VSTeamProcess { return [PSCustomObject]@{
+            name   = 'CMMI'
+            id     = 1
+            Typeid = '00000000-0000-0000-0000-000000000002'
+         }
+      }
+      [vsteam_lib.ProcessTemplateCache]::Invalidate()
 
       # Even with a default set this URI should not have the project added.
       Set-VSTeamDefaultProject -Project Testing

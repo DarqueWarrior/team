@@ -20,6 +20,7 @@ function Get-VSTeamProcess {
    [CmdletBinding(DefaultParameterSetName = 'List',
     HelpUri='https://methodsandpractices.github.io/vsteam-docs/docs/modules/vsteam/commands/Get-VSTeamProcess')]
    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSReviewUnusedParameter', '')]
+   [outputType([vsteam_lib.process])]
    param(
       [Parameter(ParameterSetName = 'ByName', Position = 0)]
       [ArgumentCompleter([vsteam_lib.ProcessTemplateCompleter])]
@@ -28,7 +29,9 @@ function Get-VSTeamProcess {
 
       [Parameter(ParameterSetName = 'ByID')]
       [Alias('ProcessTemplateID')]
-      [string] $Id
+      [string] $Id,
+
+      [switch] $ExpandProjects
    )
    process {
       $commonArgs = @{
@@ -48,26 +51,36 @@ function Get-VSTeamProcess {
          $commonArgs.area = 'process'
       }
 
+      if ($ExpandProjects) {
+         $commonArgs['QueryString'] = @{'$expand'='projects'}
+      }
+
       # Return either a single process by ID or a list of processes
       if ($id) {
          # Call the REST API with an ID
          $resp = _callAPI @commonArgs -id $id
+         #Convert project objects, if present, to their names and output a process object.
+         if ($resp.psobject.Members.name -contains "projects") {
+            $resp.projects = [string[]]($resp.projects.name)
+         }
 
-         $process = [vsteam_lib.Process]::new($resp)
-
-         Write-Output $process
+         Write-Output ([vsteam_lib.Process]::new($resp))
       }
       else {
          try {
             # Call the REST API
-            $resp = _callAPI @commonArgs
+            $resp = _callAPI @commonArgs | Select-Object -ExpandProperty value | Sort-Object -Property Name
 
-            # We just fetched all the processes so let's update the cache. Also, cache the URLS for processes
-            [vsteam_lib.ProcessTemplateCache]::Update([string[]]$($resp.value | Select-Object -ExpandProperty Name | Sort-Object))
+            # We just fetched all the processes so let's update the cache.
+            [vsteam_lib.ProcessTemplateCache]::Update([string[]]$($resp | Select-Object -ExpandProperty Name ))
 
-            $resp.value | ForEach-Object {
-               [vsteam_lib.Process]::new($_)
-            } | Where-Object { $_.name -like $Name } | Sort-Object -Property Name
+            foreach ($process in $resp.where({ $_.name -like $Name })) {
+               if   ($process.psobject.Members.name -contains "projects") {
+                     $process.projects = [string[]]($process.projects.name)
+               }
+
+               Write-Output $([vsteam_lib.Process]::new($process))
+            }
          }
          catch {
             # I catch because using -ErrorAction Stop on the Invoke-RestMethod

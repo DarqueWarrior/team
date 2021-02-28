@@ -21,19 +21,18 @@ function Set-VSTeamDefaultProject {
 
    process {
       if ($Force -or $pscmdlet.ShouldProcess($Project, "Set-VSTeamDefaultProject")) {
-         if (_isOnWindows) {
-            if (-not $Level) {
-               $Level = "Process"
-            }
+         #Set at the process level, for any OS
+         $env:TEAM_PROJECT = $Project
+         [vsteam_lib.Versions]::DefaultProject = $Project
 
-            # You always have to set at the process level or they will Not
-            # be seen in your current session.
-            $env:TEAM_PROJECT = $Project
-            [vsteam_lib.Versions]::DefaultProject = $Project
+         $env:TEAM_PROCESS = [vsteam_lib.Versions]::DefaultProcess = Get-VSTeamProcess  -ExpandProjects |
+               Where-Object Projects -Contains $Project | Select-Object -ExpandProperty Name
 
+         if  ((_isOnWindows) -and $Level -and $level -ne "Process") {
             [System.Environment]::SetEnvironmentVariable("TEAM_PROJECT", $Project, $Level)
          }
 
+         # Note: ProjectName Parameters should be given a default value of [vsteam_lib.Versions]::DefaultProject instead of globally forcing it this way.
          $Global:PSDefaultParameterValues["*-vsteam*:projectName"] = $Project
       }
    }
