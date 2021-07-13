@@ -4,7 +4,7 @@ Describe 'VSTeamWiql' {
    BeforeAll {
       . "$PSScriptRoot\_testInitialize.ps1" $PSCommandPath
       . "$baseFolder/Source/Public/Get-VSTeamWorkItem.ps1"
-      
+
       Mock _getInstance { return 'https://dev.azure.com/test' }
    }
 
@@ -106,6 +106,16 @@ Describe 'VSTeamWiql' {
       }
 
       It 'Get work items with query ID query with expanded work items' {
+         Get-VSTeamWiql -ProjectName "test" -Team "test team" -Id 1 -Expand
+
+         Should -Invoke Invoke-RestMethod -Exactly -Scope It -Times 1 -ParameterFilter {
+            $Uri -eq "https://dev.azure.com/test/test/test team/_apis/wit/wiql/1?api-version=$(_getApiVersion Core)&`$top=100"
+         }
+      }
+
+      It 'Get work items with query that returns only 1 work item and Expand' {
+         Mock Invoke-RestMethod { Write-Host $args; Open-SampleFile 'Get-VSTeamWiql-OneWorkItem.json' }
+
          Get-VSTeamWiql -ProjectName "test" -Team "test team" -Id 1 -Expand
 
          Should -Invoke Invoke-RestMethod -Exactly -Scope It -Times 1 -ParameterFilter {

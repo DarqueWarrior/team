@@ -1,0 +1,26 @@
+{
+   "queryType": "flat",
+   "queryResultType": "workItem",
+   "asOf": "2020-09-09T17:41:59.82Z",
+   "columns": [{
+         "referenceName": "System.Id",
+         "name": "ID",
+         "url": "https://dev.azure.com/toolTester/_apis/wit/fields/System.Id"
+      },
+      {
+         "referenceName": "System.Title",
+         "name": "Title",
+         "url": "https://dev.azure.com/toolTester/_apis/wit/fields/System.Title"
+      },
+      {
+         "referenceName": "System.State",
+         "name": "State",
+         "url": "https://dev.azure.com/toolTester/_apis/wit/fields/System.State"
+      }
+   ],
+   "workItems": [{
+         "id": 179,
+         "url": "https://dev.azure.com/toolTester/00000000-0000-0000-0000-000000000000/_apis/wit/workItems/179"
+      }
+   ]
+}
