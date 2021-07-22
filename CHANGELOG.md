@@ -1,10 +1,14 @@
 # Changelog
 
-## 7.3.1
+## 7.4.0
 
 Merged [Pull Request](https://github.com/DarqueWarrior/vsteam/pull/400) from [Sebastian Schütze](https://github.com/SebastianSchuetze) which included the following:
 
 - Fixes ambiguity of parameter sets in VSTeamUserEntitlement cmdlets [#393](https://github.com/DarqueWarrior/vsteam/issues/393)
+
+Merged [Pull Request](https://github.com/DarqueWarrior/vsteam/pull/408) from [Sebastian Schütze](https://github.com/SebastianSchuetze) which included the following:
+
+- Added `Set-VSTeamPipelineAuthorization` to set pipeline authorizations.
 
 ## 7.3.0
 

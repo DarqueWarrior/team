@@ -1,0 +1,1 @@
+Authorizes pipelines to use the given resources.
